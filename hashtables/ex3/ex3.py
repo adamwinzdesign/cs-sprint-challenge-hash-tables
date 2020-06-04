@@ -1,3 +1,6 @@
+# Given multiple lists of numbers, find the numbers that appear in all of the lists, in other words, output the common entries.
+# There can be up to 10 lists, but each list can contain up to 1,000,000 entries.
+
 def intersection(arrays):
     """
     YOUR CODE HERE
