@@ -5,9 +5,16 @@
 # ```
 
 def get_indices_of_item_weights(weights, length, limit):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    vals = {}
 
+    for i in range(len(weights)):
+        if weights[i] not in vals:
+            vals[weights[i]] = i
+        key = limit - weights[i]
+        if key in vals and vals[key] is not i:
+            ind = vals[key]
+            if i >= ind:
+                return [i, ind]
+            else:
+                return [vals[key], i]
     return None

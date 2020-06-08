@@ -2,12 +2,25 @@
 # There can be up to 10 lists, but each list can contain up to 1,000,000 entries.
 
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    common_numbers = {'intersection': []}
+    k = len(arrays)
+    n = 0
+    for i in range(k):
+        if len(arrays[i]) > n:
+            n = len(arrays[i])
+    for i in range(n):
+        for j in range(k):
+            if i > len(arrays[j]) - 1:
+                continue
+            num = arrays[j][i]
+            if num in common_numbers:
+                common_numbers[num] += 1
+                if common_numbers[num] == k:
+                    common_numbers['intersection'].append(num)
+            else:
+                common_numbers[num] = 1
 
-    return result
+    return common_numbers['intersection']
 
 
 if __name__ == "__main__":
